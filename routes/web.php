@@ -54,3 +54,8 @@ Route::get('/dangnhap', 'dashbroadController@getDangnhapAdmin');
 Route::post('/dangnhap', 'dashbroadController@postDangnhapAdmin');
 
 Route::get('/dangxuat', 'dashbroadController@getDangXuatAdmin');
+
+Route::get('/maukhaosat', 'SurveyController@getMaubaocao')->name('mks');
+Route::get('/maukhaosat/edit', 'SurveyController@getEditMaubaocao')->name('edit');
+Route::get('/maukhaosat/save', 'SurveyController@getSaveMaubaocao')->name('save-mks');
+Route::post('/changestatus', 'SurveyController@postChangeStatus');
