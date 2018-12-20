@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePhieuDanhGiaTable extends Migration
+class CreatePhanTieuchiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreatePhieuDanhGiaTable extends Migration
      */
     public function up()
     {
-        Schema::create('phieu_danh_gia', function (Blueprint $table) {
+        Schema::create('phan_tieu_chi', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_phieu')->unsigned();
+            $table->foreign('id_phieu')->references('id')->on('phieu_danh_gia');
+            $table->string('loaitieuchi');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -26,6 +28,6 @@ class CreatePhieuDanhGiaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('phieu_danh_gia');
+        Schema::dropIfExists('phan_tieu_chi');
     }
 }
