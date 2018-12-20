@@ -15,6 +15,8 @@ class CreateSinhVienTable extends Migration
     {
         Schema::create('sinh_vien', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
             $table->integer('msv');
             $table->string('mat_khau');
             $table->string('ho_ten');

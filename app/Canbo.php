@@ -10,4 +10,7 @@ class Canbo extends Model
     public function lopmonhoc(){
         return $this->hasMany('App\Lopmonhoc', 'id_canbo', 'id');
     }
+     public function user(){
+    	return $this->belongsTo('App\User', 'id_user', 'id');
+    }
 }

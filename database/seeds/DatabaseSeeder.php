@@ -12,8 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name'=>'sinhvien',
-            'username'=>'sinhvien123',
+            'name'=>'Triệu Hoàng An',
+            'username'=>'15020881',
             'password'=>bcrypt('12345678'),
             'level'=>'1'
         ]);

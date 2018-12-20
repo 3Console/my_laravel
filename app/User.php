@@ -9,6 +9,13 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function sinhvien(){
+        return $this->hasOne('App\Sinhvien', 'id_user', 'id');
+    }
+    public function canbo(){
+        return $this->hasOne('App\Canbo', 'id_user', 'id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

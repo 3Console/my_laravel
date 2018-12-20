@@ -15,6 +15,8 @@ class CreateCanBoTable extends Migration
     {
         Schema::create('can_bo', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
             $table->string('ten_dang_nhap');
             $table->string('mat_khau');
             $table->string('ho_ten');
