@@ -14,4 +14,7 @@ class Phieudanhgia extends Model
     public function tieuchi(){
         return $this->hasManyThrough('App\Tieuchi', 'App\Phantieuchi', 'id_phantieuchi', 'id_phieu', 'id');
     }
+    public function svlop(){
+    	return $this->hasMany('App\Svlop', 'id_phieu', 'id');
+    }
 }
